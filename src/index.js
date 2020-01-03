@@ -55,23 +55,34 @@ export const TagsArray = () => {
 };
 
 TagsArray();
-elements.shareButton.addEventListener("click", share);
-
-function share() {
-  console.log(inputText.value.replace("#", "%23"));
-  if (inputText.value.length <= 144) {
-    chrome.tabs.create({
-      url: `${elements.url}?text=${inputText.value.replace(
-        new RegExp("#", "g"),
-        "%23"
-      )}`
-    });
-    document.querySelector(".limit").style.display = "none";
-    inputText.value = " ";
-  } else {
-    document.querySelector(".limit").style.display = "block";
-  }
+function openLink() {
+  var href = `${elements.url}?text=${inputText.value.replace(
+    new RegExp("#", "g"),
+    "%23"
+  )}`;
+  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    var tab = tabs[0];
+    chrome.tabs.update(tab.id, { url: href });
+  });
 }
+elements.shareButton.addEventListener("click", openLink);
+
+// function share() {
+
+//   console.log(inputText.value.replace("#", "%23"));
+//   if (inputText.value.length <= 144) {
+//     chrome.tabs.create({
+//       url: `${elements.url}?text=${inputText.value.replace(
+//         new RegExp("#", "g"),
+//         "%23"
+//       )}`
+//     });
+//     document.querySelector(".limit").style.display = "none";
+//     inputText.value = " ";
+//   } else {
+//     document.querySelector(".limit").style.display = "block";
+//   }
+// }
 
 elements.Addtag.addEventListener("click", () => {
   if (elements.inputTag.value.trim().length > 0) {

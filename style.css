@@ -1,0 +1,220 @@
+html {
+  width: 100%;
+}
+body {
+  margin-top: 2px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 121, 99, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  font-family: "Roboto Mono", monospace;
+}
+.WholeData {
+  margin-right: 10px;
+}
+.container1 {
+  display: grid;
+  grid-template-rows: 100px 378px;
+  grid-template-columns: 360px 650px 250px 250px;
+  grid-template-areas:
+    " header header sidebar sidebar"
+    ". main sidebar sidebar";
+  display: flex;
+}
+header {
+  grid-area: header;
+  text-align: center;
+  font-size: 50px;
+  margin-left: 348px;
+  display: none;
+  position: relative;
+}
+.mainField {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-start: 2;
+  grid-area: main;
+  /* margin-top: 30px; */
+  width: 231px;
+}
+.header {
+  display: block;
+
+  align-items: center;
+  /* //margin-left: 571px; */
+  text-align: center;
+}
+
+.day {
+  box-shadow: inset 0px 1px 3px 0px #91b8b3;
+  background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+  background-color: #768d87;
+  border-radius: 5px;
+  border: 1px solid #566963;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 1px 3px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #2b665e;
+  margin-left: 1px;
+  width: 85px;
+  height: 15px;
+  /* margin-left: 56px; */
+}
+.day:hover {
+  background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+  background-color: #6c7c7c;
+}
+.day:active {
+  position: relative;
+  top: 1px;
+}
+
+.inputTag {
+  border-radius: 3px;
+  border: 0;
+
+  width: 100%;
+  height: 25px;
+}
+
+#btn {
+  box-shadow: inset 0px 0px 14px -3px #f2fadc;
+  background: linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
+  background-color: #dbe6c4;
+  border-radius: 6px;
+  border: 1px solid #b2b8ad;
+  display: inline-block;
+  cursor: pointer;
+  color: #757d6f;
+  font-family: Arial;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 2px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ced9bf;
+  width: 61px;
+}
+#btn:hover {
+  background: linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+  background-color: #9ba892;
+}
+#btn:active {
+  position: relative;
+  top: 1px;
+}
+
+.tagButton {
+  width: 34px;
+  height: 27px;
+  background-color: white;
+  border: 0;
+
+  position: absolute;
+  right: 10px;
+}
+
+.HashTags {
+  display: flex;
+  width: 100%;
+  /* margin-left: 102px; */
+  text-align: center;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+a {
+  width: 100px;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.Decription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 204px;
+
+  /* margin-top: 29px; */
+  width: 95%;
+}
+textarea {
+  width: 372px;
+  height: 177px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 0;
+}
+.addData {
+  width: 100px;
+}
+.Sharefield {
+  display: flex;
+  width: 16%;
+
+  margin-right: 0px;
+  margin-top: 20px;
+}
+.Share {
+  margin-left: 50px;
+}
+.taskList {
+  display: flex;
+
+  margin-bottom: 0%;
+  /* margin-left: 100px; */
+  grid-column-start: 2;
+  grid-column-end: -1;
+  grid-row-start: 0;
+  grid-row-start: 2;
+
+  grid-area: sidebar;
+  flex-flow: column nowrap;
+  height: 687px;
+  align-items: center;
+  display: none;
+}
+.listView {
+  width: 80%;
+  overflow-y: scroll;
+  padding: 11px;
+  background-color: aquamarine;
+  height: 586px;
+}
+h1 {
+  text-align: center;
+}
+.listBlock {
+  background-color: rgb(247, 246, 244);
+  font-size: small;
+  width: 334px;
+  height: 54px;
+  margin-left: 10px;
+  border-radius: 5px;
+  list-style: none;
+  padding: 14px;
+  margin-bottom: 5px;
+  /* overflow-wrap: break-word;
+    /* word-wrap: break-word; */
+  /* hyphens: auto; */
+  overflow-y: scroll;
+}
+td {
+  text-align: center;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.list::-webkit-scrollbar {
+  background: red;
+  border-radius: 10px;
+  width: 20px;
+}
